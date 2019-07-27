@@ -1,0 +1,63 @@
+<!--pages/shadiao/shadiao.wxml-->
+
+<view class='outer'>
+  <view>
+    <view class="shadiao">
+      <image class="picture" src='../../image/shadiao1.png' />
+      <image class="picture" style="margin:0 20px;" src='../../image/shadiao2.png' />
+      <image class="picture" src='../../image/shadiao3.png' />
+    </view>
+    <view class="comment">
+      <view>
+        <view class='comment-top'>
+          <text>Lorem ipsum dolor sit amet,consectetur adipiscing elit.Aenean euismod bibendum laoreet.</text>
+        </view>
+        <view class='comment-bottom'>
+          <text style='margin-right:20px;'>搞笑图</text>
+          <text style='margin-right:5px;'>评论</text>
+          <text>20</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view style='margin:10px 0;'>
+    <view class="shadiao">
+      <image class="picture" src='../../image/shadiao1.png' />
+      <image class="picture" style="margin:0 20px;" src='../../image/shadiao2.png' />
+      <image class="picture" src='../../image/shadiao3.png' />
+    </view>
+    <view class="comment">
+      <view>
+        <view class='comment-top'>
+          <text>Lorem ipsum dolor sit amet,consectetur adipiscing elit.Aenean euismod bibendum laoreet.</text>
+        </view>
+        <view class='comment-bottom'>
+          <text style='margin-right:20px;'>搞笑图</text>
+          <text style='margin-right:5px;'>评论</text>
+          <text>20</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <view class="shadiao">
+      <image class="picture" src='../../image/shadiao1.png' />
+      <image class="picture" style="margin:0 20px;" src='../../image/shadiao2.png' />
+      <image class="picture" src='../../image/shadiao3.png' />
+    </view>
+    <view class="comment">
+      <view>
+        <view class='comment-top'>
+          <text>Lorem ipsum dolor sit amet,consectetur adipiscing elit.Aenean euismod bibendum laoreet.</text>
+        </view>
+        <view class='comment-bottom'>
+          <text style='margin-right:20px;'>搞笑图</text>
+          <text style='margin-right:5px;'>评论</text>
+          <text>20</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

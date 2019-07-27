@@ -1,0 +1,40 @@
+<!--pages/emotion/emotion.wxml-->
+<!-- <view   class='outer'>
+  <view class='container' style='width:100px;height:115px;'>
+    <view>
+      <image style='width:100px;height:100px;' src='../../image/shadiao5.png' />
+    </view>
+    <view class='event'>
+      <text>分享事件</text>
+    </view>
+  </view>
+</view> -->
+<view class="bar" hover-class="none" hover-stop-propagation="false">
+  <block wx:for="{{bardata}}" wx:key="item">
+    <view class="baritem {{item.itemnum==item.on?'on':'side'}}" selectable="false" space="false" decode="false" data-itemnum="{{item.itemnum}}" bind:tap="bartap">
+      {{item.text}}
+    </view>
+  </block>
+</view>
+
+<view class="stream {{show==1?'show':'hide'}}" hover-class="none" hover-stop-propagation="false">
+  <view class="firstline line" hover-class="none" hover-stop-propagation="false">
+    <block wx:for="{{sectiondata[0]}}" wx:key="item">
+      <section userdata="{{item}}"></section>
+    </block>
+  </view>
+  <view class="secondline line" hover-class="none" hover-stop-propagation="false">
+    <block wx:for="{{sectiondata[1]}}" wx:key="item">
+      <section userdata="{{item}}"></section>
+    </block>
+  </view>
+</view>
+
+<!-- <view class='audio'>
+  <view style='dispaly:flex; flex-warp:warp;'>
+      <view><image style='width:20px;height:20px;' src='../../image/audio.png' /></view>
+      <view><text>狼人</text></view>
+      <view><text>2019/7/20</text>
+      <text>20:00</text></view>
+  </view>
+</view> -->

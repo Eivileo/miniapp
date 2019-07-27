@@ -1,0 +1,34 @@
+/* pages/shadiao/shadiao.wxss */
+.main {
+  position: absolute;
+}
+.shadiao {
+  margin: 0 5rpx;
+  padding: 10rpx;
+  display: flex;
+  justify-content: center;
+  background-color: #ccc;
+}
+
+.picture {
+  width: 80rpx;
+  height: 80rpx;
+  flex: 0 0 auto;
+}
+
+.comment {
+  margin: 0 5rpx;
+  display: flex;
+  flex-direction: colum;
+  background-color: rgba(204, 211, 204, 0.041);
+}
+
+.comment-top {
+  font-size: 14rpx;
+  color: #353535;
+}
+
+.comment-bottom {
+  font-size: 14rpx;
+  color: #888;
+}
