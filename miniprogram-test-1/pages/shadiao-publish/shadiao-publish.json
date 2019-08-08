@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "+页面",
+  "usingComponents": {
+    "single-dropdown-select": "../../components/single-dropdown-select/select"
+  }
+}

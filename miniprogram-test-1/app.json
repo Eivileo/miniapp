@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/plus/plus",
+    "pages/shadiao/shadiao",
+    "pages/emotion/emotion",
+   "pages/shadiao-publish/shadiao-publish",
+    "pages/index/index",
+    "pages/test/test", 
+    "pages/logs/logs",
+    "pages/person/person",
+    "pages/scuecthings/scuecthings",
+    "pages/express/express",
+    "pages/search/search",
+    "pages/myindex/myindex",
+    "pages/myinfo/myinfo",
+    "pages/mycollect/mycollect",
+    "pages/myfocus/myfocus",
+    "pages/focusmy/focusmy",
+    "pages/aboutus/aboutus",
+    "pages/intruduce/intruduce"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "解忧杂货铺",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "",
+        "iconPath": "image/house.png",
+        "selectedIconPath": "image/onhouse.png"
+      },
+      {
+        "pagePath": "pages/plus/plus",
+        "text": "",
+        "iconPath": "image/plus.png",
+        "selectedIconPath": "image/plus.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "",
+        "iconPath": "image/person.png",
+        "selectedIconPath": "image/onperson.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {}
+}

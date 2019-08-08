@@ -1,0 +1,43 @@
+/* pages/shadiao/shadiao.wxss */
+.outer{
+  display: flex;
+  flex-direction: column;
+}
+
+.shadiaotu {
+  margin: 20rpx 0;
+  width: 100%;
+  background-color: #ccc;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contain {
+  width: 100%;
+  display: flex;
+}
+
+.shadiao {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 12rpx;
+}
+.words{
+  margin: 0 20rpx;
+  font-size: 30rpx;
+}
+.comment{
+  margin: 0 20rpx;
+  font-size: 25rpx;
+  color: #888;
+}
+

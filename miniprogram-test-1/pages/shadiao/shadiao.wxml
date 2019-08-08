@@ -1,0 +1,69 @@
+<!--pages/shadiao/shadiao.wxml-->
+
+<view class='outer'> 
+  <view class="shadiaotu">
+    <block wx:for="{{shadiaodate}}" wx:key="item" class="contain">
+      <view class="shadiao" id="{{item.id}}" hover-class="none" hover-stop-propagation="false">
+        <image class="image" src="{{item.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>  
+      </view>
+    </block>
+  </view>
+  <view>
+    <block wx:for="{{textdate}}" wx:key="item">
+      <view  hover-class="none" id="{{item.id}}" hover-stop-propagation="false" class='words'>
+        {{item.text}}
+      </view>
+    </block>
+  </view>
+  <view>
+    <block wx:for="{{pointdate}}" wx:key="item">
+      <view  hover-class="none" id="{{item.id}}" hover-stop-propagation="false" class='comment'>
+        {{item.text}} {{item.text1}} {{item.id}}
+      </view>
+    </block>
+  </view>
+  
+ <view class="shadiaotu">
+    <block wx:for="{{shadiaodate}}" wx:key="item" class="contain">
+      <view class="shadiao" id="{{item.id}}" hover-class="none" hover-stop-propagation="false">
+        <image class="image" src="{{item.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>  
+      </view>
+    </block>
+  </view>
+  <view>
+    <block wx:for="{{textdate}}" wx:key="item">
+      <view  hover-class="none" id="{{item.id}}" hover-stop-propagation="false" class='words'>
+        {{item.text}}
+      </view>
+    </block>
+  </view>
+  <view>
+    <block wx:for="{{pointdate}}" wx:key="item">
+      <view  hover-class="none" id="{{item.id}}" hover-stop-propagation="false" class='comment'>
+        {{item.text}} {{item.text1}} {{item.id}}
+      </view>
+    </block>
+  </view>
+
+  <view class="shadiaotu">
+    <block wx:for="{{shadiaodate}}" wx:key="item" class="contain">
+      <view class="shadiao" id="{{item.id}}" hover-class="none" hover-stop-propagation="false">
+        <image class="image" src="{{item.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>  
+      </view>
+    </block>
+  </view>
+  <view>
+    <block wx:for="{{textdate}}" wx:key="item">
+      <view  hover-class="none" id="{{item.id}}" hover-stop-propagation="false" class='words'>
+        {{item.text}}
+      </view>
+    </block>
+  </view>
+  <view>
+    <block wx:for="{{pointdate}}" wx:key="item">
+      <view  hover-class="none" id="{{item.id}}" hover-stop-propagation="false" class='comment'>
+        {{item.text}} {{item.text1}} {{item.id}}
+      </view>
+    </block>
+  </view>
+</view>
