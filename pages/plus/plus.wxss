@@ -19,7 +19,15 @@
   color: #aaa;
 }
 
-.publish {
+/* 发布部分 */
+.picker{
+  font-size: 28rpx;
+  text-align: center;
+  padding: 20rpx 0;
+  border-top: 1px solid #bcbcbc;
+  border-bottom: 5px solid #f4f1f1;
+}
+.publish-contain {
   margin: 10rpx 20rpx;
 }
 
@@ -30,24 +38,6 @@
 
 /* 图片部分 */
 
-.publish_imgs_area {
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  border-radius: 15rpx;
-  padding-left: 8rpx;
-  padding-top: 8rpx;
-  padding-bottom: 8rpx;
-}
-
-.iamge_item {
-  width: 225rpx;
-  height: 225rpx;
-  padding: 4rpx;
-}
-
 .iamge_content {
   width: 223rpx;
   height: 223rpx;
@@ -55,67 +45,72 @@
   border: 1px solid #f1efef;
 }
 
-.iamge_cancel {
-  width: 40rpx;
-  height: 40rpx;
-  border-radius: 50%;
-  position: relative;
-  top: -259rpx;
-  right: -204rpx;
-  z-index: 800;
+/*swtich整体大小及背景色*/
+
+.wx-switch-input {
+  width: 82rpx !important;
+  height: 36rpx !important;
+  background: #89e996 !important;
+  border: #89e996 !important;
 }
 
-/* 视频部分样式 */
+/*白色样式（false的样式）*/
 
-.video_area {
-  width: 700rpx;
-  position: relative;
+.wx-switch-input::before {
+  background: #f1efef !important;
+  width: 80rpx !important;
+  height: 36rpx !important;
 }
 
-.video_item {
-  width: 700rpx;
+/*绿色样式（true的样式）*/
+
+.wx-switch-input::after {
+  width: 40rpx !important;
+  height: 36rpx !important;
 }
 
-.video_delete {
-  width: 50rpx;
-  height: 50rpx;
-  position: absolute;
-  top: 10rpx;
-  right: 2rpx;
-}
-
-.btn_all_area {
-  background-color: #fff;
+.publish {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 20rpx 20rpx 6rpx 20rpx;
-  border-radius: 15rpx;
-  /* position: absolute;
-    bottom: 0; */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.anonymous {
+  color: #a8a8a8;
+  font-size: 12px;
+  margin-left: 40rpx;
+}
+
+.body-view {
+  margin-right: 10rpx;
+}
+
+/* 消除按钮默认样式 */
+
+button::after {
+  border: none;
+}
+
+input {
+  outline: none;
+  border: none;
+  list-style: none;
 }
 
 .btn_area {
-  margin-right: 5rpx;
-  width: 350rpx;
-  opacity: 0.7;
+  width: 688rpx;
+  height: 96rpx;
+  margin-top: 20rpx;
+  margin-left: 60rpx;
+  text-align: center;
 }
 
 .pictures {
   background-color: #f4f1f1;
 }
 
-.images-box {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 20rpx;
-}
-
-.image {
-  width: 90px;
-  height: 80px;
-}
-.pageslogoctn {
+.emotion-pictures {
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -127,8 +122,9 @@
   display: flex;
 }
 
-.pageimage {
+.picture {
   width: 200rpx;
   height: 200rpx;
   margin: 12rpx;
+  margin-bottom: 57rpx;
 }

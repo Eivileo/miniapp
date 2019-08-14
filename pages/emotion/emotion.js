@@ -18,32 +18,44 @@ Page({
         itemnum: 1,
         on: 0
       }
+    ],
+    sectiondata: [
+      /**
+       * 第一列数据
+       */
+      [
+        {
+          eimg: "../../image/ting.png",
+          etext: "A beautiful girl called yuting",
+          userlogo: "../../image/ting.png",
+          username: "Zhou Yuting"
+        }
+      ],
+      /**
+       * 第二列数据
+       */
+      [
+        {
+          eimg: "../../image/ting2.png",
+          etext: "A beautiful girl called liting",
+          userlogo: "../../image/ting2.png",
+          username: "Zhu Liting"
+        }
+      ],
+      /**
+       * 第三列数据
+       */
+      [
+        {
+          eimg: "../../image/ting.png",
+          etext: "A beautiful girl called yuting",
+          userlogo: "../../image/ting.png",
+          username: "Zhou Yuting"
+        }
+      ]
     ]
   },
-  sectiondata: [
-    /**
-     * 第一列数据
-     */
-    [
-      {
-        eimg: "../../image/ting.png",
-        etext: "A beautiful girl called yuting",
-        userlogo: "../../image/ting.png",
-        username: "Zhou Yuting"
-      }
-    ],
-    /**
-     * 第二列数据
-     */
-    [
-      {
-        eimg: "../../image/ting2.png",
-        etext: "A beautiful girl called liting",
-        userlogo: "../../image/ting2.png",
-        username: "Zhu Liting"
-      }
-    ]
-  ],
+  
   // 事件处理函数
   bartap: function (e) {
     let index = e.currentTarget.dataset.itemnum;

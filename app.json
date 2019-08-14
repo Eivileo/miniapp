@@ -1,10 +1,17 @@
 {
   "pages": [
+      "pages/test_1/test_1",
+    "pages/test_2/test_2",
+    "pages/post/post",
+    "pages/comment/comment",
+ 
     "pages/plus/plus",
-    "pages/index/index",
     "pages/test/test",
-    "pages/emotion/emotion",
-    "pages/shadiao/shadiao", 
+  "pages/shadiao/shadiao",
+  "pages/emotion/emotion",
+   "pages/shadiao-publish/shadiao-publish",
+    "pages/index/index",
+   
     "pages/logs/logs",
     "pages/person/person",
     "pages/scuecthings/scuecthings",

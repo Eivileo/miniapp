@@ -5,60 +5,51 @@ Page({
    * 页面的初始数据
    */
   data: {
-
-    // 标题数
-    titleCount: 0,
-    // 详情数
-    contentCount: 0,
-    // 标题内容
-    title: '',
-    // 标题内容
-    content: '',
-    // 图片列表
-    images: [],
-    // 视频
-    video: '',
-
     motto: "Hello World",
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse("button.open-type.getUserInfo"),
-    selectArray: [{
-        "id": "0",
-        "value": "一吐为快"
-      }, {
-        "id": "1",
-        "value": "我的树洞"
-      }, {
-        "id": "2",
-        "text": "我的悬赏"
+    array: ['一吐为快', '我的树洞', '我的悬赏', '表白Ta', '海底捞', '代取快递', '外卖上楼', '代买零食','其他可代'],
+    objectArray: [
+      {
+        id: 0,
+        name: '一吐为快'
       },
       {
-        "id": "3",
-        "text": "表白Ta"
+        id: 1,
+        name: '我的树洞'
       },
       {
-        "id": "4",
-        "text": "海底捞"
+        id: 2,
+        name: '我的悬赏'
       },
       {
-        "id": "5",
-        "text": "代取快递"
+        id: 3,
+        name: '表白Ta'
       },
       {
-        "id": "6",
-        "text": "外卖上楼"
+        id: 4,
+        name: '海底捞'
       },
       {
-        "id": "7",
-        "text": "代买零食"
+        id: 5,
+        name: '代取快递'
       },
       {
-        "id": "8",
-        "text": "其他可代"
+        id: 6,
+        name: '外卖上楼'
+      },
+      {
+        id: 3,
+        name: '代买零食'
+      },
+      {
+        id: 7,
+        name: '其他可代'
       }
     ],
-    pagedate: [{
+    index: 0,
+    picturedate: [{
         image: "../../image/shadiao1.png",
         id: 0
       },
@@ -125,172 +116,26 @@ Page({
       url: url
     });
   },
+  // 选择
   select: function(e) {
     console.log(e.detail)
   },
-
-  // 图片操作的具体函数
-  ImageOperator() {
-    wx.chooseImage({
-      count: 9,
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
-      success: res => {
-        // 上传的图片数据
-        const imgList = res.tempFilePaths;
-        // 原始的图片数据
-        const imageList = this.data.images;
-
-        // 原来的图片数量
-        let imageLenght = imageList.length;
-        // 当前的图片数量
-        let nowLenght = imgList.length;
-        console.log(imageLenght);
-
-        if (imageLenght == 9) {
-          console.log("数量已经有9张，请删除在添加...");
-        }
-        if (imageLenght < 9) {
-          let images = [];
-          // 获取缺少的图片张数
-          let residue = 9 - imageLenght;
-          // 如果缺少的张数大于当前的的张数  
-          if (residue >= nowLenght) {
-            // 直接将两个数组合并为一个  
-            images = imageList.concat(imgList);
-          } else {
-            // 否则截取当前的数组一部分  
-            images = imageList.concat(imgList.slice(0, residue));
-          }
-          this.setData({
-            images
-          })
-        }
-      }
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
     })
-  },
-
-  // 标题操作
-  handleTitleInput(event) {
-    let inputValue = event.detail.value;
-    // 确保标题不存在空格  
-    if (inputValue.lastIndexOf(" ") != -1) {
-      inputValue = inputValue.substring(0, inputValue.lastIndexOf(" "));
-    }
-    let titleCount = inputValue.length;
-    if (titleCount <= 25) {
-      this.setData({
-        titleCount: titleCount,
-        title: inputValue
-      })
-    }
   },
   // 内容操作
   handleContentInput(event) {
     let textareaValue = event.detail.value;
     let contentCount = textareaValue.length;
-    if (contentCount <= 255) {
+    if (contentCount <= 225) {
       this.setData({
         contentCount: contentCount,
         content: textareaValue
       })
     }
-  },
-  // 图片获取
-  chooseImage() {
-    if (this.data.images.length == 0) {
-      wx.showToast({
-        title: '视频和图片只能选择上传一种类型!',
-        icon: 'none',
-        duration: 2000,
-        success: res => {
-          this.ImageOperator()
-        }
-      })
-    } else {
-      this.ImageOperator()
-    }
-
-  },
-  // 删除图片
-  deleteImage(event) {
-    //获取数据绑定的data-id的数据
-    const nowIndex = event.currentTarget.dataset.id;
-    let images = this.data.images;
-    images.splice(nowIndex, 1);
-    this.setData({
-      images
-    })
-  },
-  // 预览图片
-  previewIamge(event) {
-    const nowIndex = event.currentTarget.dataset.id;
-    const images = this.data.images;
-    wx.previewImage({
-      current: images[nowIndex], //当前预览的图片
-      urls: images, //所有要预览的图片
-    })
-  },
-  // 上传视频
-  chooseVideo() {
-    // 弹层  
-    wx.showToast({
-      title: '视频和图片只能选择上传一种类型!',
-      icon: 'none',
-      duration: 2000,
-      success: res => {
-        wx.chooseVideo({
-          sourceType: ['album', 'camera'],
-          compressed: true,
-          maxDuration: 10,
-          camera: 'back',
-          success: res => {
-            console.log(res);
-            const video = res.tempFilePath;
-            this.setData({
-              video
-            })
-          }
-        })
-      }
-    })
-  },
-  // 删除视频
-  videoDelete() {
-    wx.showModal({
-      title: '警告',
-      content: '确定要删除该视频吗',
-      success: res => {
-        if (res.confirm) {
-          this.setData({
-            video: ''
-          })
-        }
-      }
-    })
-  },
-  // 表单提交事件
-  submitClick() {
-
-  },
-  // 重置表单
-  resetClick() {
-    wx.showModal({
-      title: '警告',
-      content: '重置表单将需要重新上传数据',
-      success: res => {
-        if (res.confirm) {
-          this.setData({
-            titleCount: 0,
-            contentCount: 0,
-            title: '',
-            content: '',
-            images: [],
-            video: ''
-          })
-        }
-      }
-    })
   },
   switchChange: function(e) {
     console.log('switch 发生 change 事件，携带值为', e.detail.value)

@@ -9,6 +9,14 @@
     </view>
   </view>
 </view> -->
+<!-- <view class='audio'>
+  <view style='dispaly:flex; flex-warp:warp;'>
+      <view><image style='width:20px;height:20px;' src='../../image/audio.png' /></view>
+      <view><text>狼人</text></view>
+      <view><text>2019/7/20</text>
+      <text>20:00</text></view>
+  </view>
+</view> -->
 <view class="bar" hover-class="none" hover-stop-propagation="false">
   <block wx:for="{{bardata}}" wx:key="item">
     <view class="baritem {{item.itemnum==item.on?'on':'side'}}" selectable="false" space="false" decode="false" data-itemnum="{{item.itemnum}}" bind:tap="bartap">
@@ -16,8 +24,8 @@
     </view>
   </block>
 </view>
-
-<view class="stream {{show==1?'show':'hide'}}" hover-class="none" hover-stop-propagation="false">
+<!-- 树洞哇 -->
+<view class="stream {{show==0?'show':'hide'}}" hover-class="none" hover-stop-propagation="false">
   <view class="firstline line" hover-class="none" hover-stop-propagation="false">
     <block wx:for="{{sectiondata[0]}}" wx:key="item">
       <section userdata="{{item}}"></section>
@@ -28,13 +36,11 @@
       <section userdata="{{item}}"></section>
     </block>
   </view>
+  <view class="secondline line" hover-class="none" hover-stop-propagation="false">
+    <block wx:for="{{sectiondata[2]}}" wx:key="item">
+      <section userdata="{{item}}"></section>
+    </block>
+  </view>
 </view>
 
-<!-- <view class='audio'>
-  <view style='dispaly:flex; flex-warp:warp;'>
-      <view><image style='width:20px;height:20px;' src='../../image/audio.png' /></view>
-      <view><text>狼人</text></view>
-      <view><text>2019/7/20</text>
-      <text>20:00</text></view>
-  </view>
-</view> -->
+<!-- 吐槽吧 -->

@@ -1,9 +1,8 @@
-/* pages/shadiao/shadiao.wxss */
 .body-main-box {
   position: relative;
   overflow: hidden;
   height: 100vh;
-}
+} 
 
 .body-swiper {
   width: 640rpx;
@@ -184,3 +183,71 @@
 .btn::after {
   border: 0;
 }
+/* reply */
+.reply{
+  width: 100%;
+  position: absolute;
+  top:930rpx;
+  margin-left: 100rpx;
+}
+.floor {
+  width: 80%;
+}
+.none {
+  display: none;
+}
+
+/*整体样式，就是黑色的容器*/
+.comment_release{
+  display: flex;
+  align-items: flex-end; 
+  justify-content: space-between; 
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding:10rpx 0 10rpx 10rpx;
+  background-color: #ffffff;
+  font-size: 12px;
+  z-index: 999;
+  border-top: 1px solid #bcbcbc;
+}
+
+/*输入框*/
+.comment_release .text{
+  width: 60%;
+  min-height: 17rpx;
+  max-height: 51rpx; /*最多显示三行*/
+  line-height: 17rpx;
+  font-size: 22rpx;
+  padding: 15rpx 0 15rpx 15rpx;
+  background-color: #f4f1f1;
+  border-radius: 5px;
+}
+
+/*表情图标*/
+.comment_release .emoji{
+  width: 24px;
+  height: 24px;
+  line-height: 27px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+/*发送按钮*/
+.comment_release .submit{ 
+  width: 60px;
+  height: 27px;
+  line-height: 27px;
+  text-align: center;
+  margin-right: 10px;
+  background-color: #4B5CD7;
+  color: #ffffff;
+  font-size: 12px;
+}
+ 
+
+ .collect{
+   width: 50rpx;
+   height: 50rpx;
+ }
