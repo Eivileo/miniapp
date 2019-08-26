@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "情绪小树洞",
-  "usingComponents": {}
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "section": "../../components/section/section"
+  }
 }

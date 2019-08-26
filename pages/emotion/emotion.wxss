@@ -1,20 +1,4 @@
-/* pages/emotion/emotion.wxss */
-
-.outer {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  border: 2px solid #000;
-}
-
-.event {
-  width: 100px;
-  height: 30px;
-  line-height: 30px;
-  border: 2px solid #000;
-}
+/* pages/emotion/emotion.wxss */ 
 
 .bar {
   width: 100%;
@@ -45,16 +29,13 @@
   justify-content: center;
   align-items: flex-start;
 }
-
 .line {
   width: 46%;
   margin: 8rpx;
 }
-
 .show {
   display: flex;
 }
-
 .hide {
   display: none;
 }

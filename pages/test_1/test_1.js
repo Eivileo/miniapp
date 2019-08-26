@@ -1,10 +1,11 @@
-// pages/shadiao/shadiao.js
 let touchDotX = 0; //X按下时坐标
 let touchDotY = 0; //y按下时坐标
 var util = require('../../utils/util.js');
 const app = getApp();
 Page({
   data: {
+
+    releaseFocus: false, 
     animationData1: {},
     animationData2: {},
     animationData3: {},
@@ -19,32 +20,32 @@ Page({
     index3: 1,
     statusBarHeight: getApp().globalData.statusBarHeight,
     routers: [{
-      image: '../../image/shadiao1.png'
-    },
-    {
-      image: '../../image/shadiao2.png'
-    },
-    {
-      image: '../../image/shadiao3.png'
-    },
-    {
-      image: '../../image/shadiao4.png'
-    },
-    {
-      image: '../../image/shadiao5.png'
-    },
-    {
-      image: '../../image/shadiao1.png'
-    },
-    {
-      image: '../../image/shadiao2.png'
-    },
-    {
-      image: '../../image/shadiao3.png'
-    },
-    {
-      image: '../../image/shadiao4.png'
-    }
+        image: '../../image/shadiao1.png'
+      },
+      {
+        image: '../../image/shadiao2.png'
+      },
+      {
+        image: '../../image/shadiao3.png'
+      },
+      {
+        image: '../../image/shadiao4.png'
+      },
+      {
+        image: '../../image/shadiao5.png'
+      },
+      {
+        image: '../../image/shadiao1.png'
+      },
+      {
+        image: '../../image/shadiao2.png'
+      },
+      {
+        image: '../../image/shadiao3.png'
+      },
+      {
+        image: '../../image/shadiao4.png'
+      }
     ],
     textdate: "今日沙雕表情包分享啊今日沙雕表情包分享啊今日沙雕表情包分享啊今日沙雕表情包分享啊今日沙雕表情包分享啊",
     showdata: {
@@ -55,21 +56,47 @@ Page({
         username: "Zhu Liting",
         usertime: "今天 15:27"
       }
-    }
+    },
+    floordata: [
+      [{
+          user: {
+            username: "Zhu Liting",
+            userlogo: "../../image/ting2.png"
+          },
+          targetuser: {
+            username: "Zhu Liting",
+            userlogo: "./../image/ting2.png"
+          },
+          time: "2019.7.31",
+          text: "哈哈哈哈哈哈哈哈哈哈哈哈",
+          reply: false
+        }
+      ]
+    ]
   },
-  onLoad(options) { },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    console.log(options);
+    let showdata = JSON.parse(options.value);
+    console.log(showdata.eimg);
+    this.setData({
+      showdata: showdata
+    });
+  },
 
   /**
    *  卡片1手势
    */
-  touchstart1: function (event) {
+  touchstart1: function(event) {
     touchDotX = event.touches[0].pageX; // 获取触摸时的原点
     touchDotY = event.touches[0].pageY;
     console.log("起始点的坐标X:" + touchDotX);
     console.log("起始点的坐标Y:" + touchDotY);
   },
   // 移动结束处理动画
-  touchend1: function (event) {
+  touchend1: function(event) {
     // 手指离开屏幕时记录的坐标
     let touchMoveX = event.changedTouches[0].pageX;
     let touchMoveY = event.changedTouches[0].pageY;
@@ -125,7 +152,7 @@ Page({
   /**
    *  卡片2手势
    */
-  touchstart2: function (event) {
+  touchstart2: function(event) {
     touchDotX = event.touches[0].pageX; // 获取触摸时的原点
     touchDotY = event.touches[0].pageY;
 
@@ -134,7 +161,7 @@ Page({
 
   },
   // 移动结束处理动画
-  touchend2: function (event) {
+  touchend2: function(event) {
     let touchMoveX = event.changedTouches[0].pageX;
     let touchMoveY = event.changedTouches[0].pageY;
     let tmX = touchMoveX - touchDotX;
@@ -171,14 +198,14 @@ Page({
   /**
    *  卡片3手势
    */
-  touchstart3: function (event) {
+  touchstart3: function(event) {
     touchDotX = event.touches[0].pageX; // 获取触摸时的原点
     touchDotY = event.touches[0].pageY;
     console.log("起始点的坐标X:" + touchDotX);
     console.log("起始点的坐标Y:" + touchDotY);
   },
   // 移动结束处理动画
-  touchend3: function (event) {
+  touchend3: function(event) {
     let touchMoveX = event.changedTouches[0].pageX;
     let touchMoveY = event.changedTouches[0].pageY;
     let tmX = touchMoveX - touchDotX;
@@ -215,7 +242,7 @@ Page({
    * 卡片1:
    * 左滑动右滑动动画
    */
-  Animation1: function (translateXX) {
+  Animation1: function(translateXX) {
     let animation = wx.createAnimation({
       duration: 640,
       timingFunction: "ease",
@@ -260,7 +287,7 @@ Page({
    * 卡片2:
    * 左滑动右滑动动画
    */
-  Animation2: function (translateXX) {
+  Animation2: function(translateXX) {
     let animation = wx.createAnimation({
       duration: 640,
       timingFunction: "ease",
@@ -306,7 +333,7 @@ Page({
    * 卡片3:
    * 左滑动右滑动动画
    */
-  Animation3: function (translateXX) {
+  Animation3: function(translateXX) {
     let animation = wx.createAnimation({
       duration: 640,
       timingFunction: "ease",
@@ -345,5 +372,10 @@ Page({
         index3: 1,
       })
     }, 500);
+  },
+  bindReply: function(e) {
+    this.setData({
+      releaseFocus: true
+    })
   }
 })
